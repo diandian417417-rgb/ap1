@@ -1,0 +1,87 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { height: 100%; }
+
+body {
+  font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  background: #0a0c10;
+  color: #e6e9ef;
+  overflow: hidden;
+}
+
+#app { display: flex; height: 100vh; }
+
+/* ---------- 面板 ---------- */
+#panel {
+  width: 268px;
+  flex: none;
+  padding: 20px 18px;
+  background: #12161d;
+  border-right: 1px solid #232a36;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+}
+
+#panel h1 { font-size: 17px; letter-spacing: .5px; }
+#panel .sub { font-size: 12px; color: #7c8798; margin-top: -8px; }
+
+.field { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: #aeb8c8; }
+.field > span { display: flex; justify-content: space-between; }
+.field b { color: #4fc3f7; font-weight: 600; }
+
+select, input[type="range"] { width: 100%; }
+
+select {
+  background: #1b212c;
+  color: #e6e9ef;
+  border: 1px solid #2c3644;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+  outline: none;
+}
+select:disabled { opacity: .4; }
+
+input[type="range"] { accent-color: #4fc3f7; height: 20px; }
+input[type="range"]:disabled { opacity: .35; }
+
+.btns { display: flex; gap: 8px; margin-top: 4px; }
+button {
+  flex: 1;
+  padding: 9px;
+  border-radius: 8px;
+  border: none;
+  background: #4fc3f7;
+  color: #06222e;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button.ghost { background: #1b212c; color: #aeb8c8; border: 1px solid #2c3644; }
+button:active { transform: translateY(1px); }
+
+.stat {
+  font-size: 12px;
+  color: #6ee7b7;
+  font-variant-numeric: tabular-nums;
+  background: #10161f;
+  border: 1px solid #1f2836;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.hint { font-size: 11.5px; color: #6b7688; line-height: 1.7; margin-top: auto; }
+kbd {
+  background: #1b212c;
+  border: 1px solid #2c3644;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 10.5px;
+}
+
+/* ---------- 画布 ---------- */
+#stage { flex: 1; position: relative; background: #05070a; }
+#gl { width: 100%; height: 100%; display: block; cursor: grab; }
+#gl:active { cursor: grabbing; }
