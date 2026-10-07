@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AP1 · 交互式 2D 分形</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="panel">
+      <h1>Sierpinski 垫片</h1>
+      <p class="sub">WebGL 2.0 · 混沌游戏 / 递归细分</p>
+
+      <label class="field">
+        <span>生成算法</span>
+        <select id="algorithm">
+          <option value="chaos">混沌游戏（Chaos Game）</option>
+          <option value="subdivision">递归细分（Subdivision）</option>
+        </select>
+      </label>
+
+      <label class="field" id="countField">
+        <span>顶点数（混沌）<b id="countVal">20000</b></span>
+        <input id="count" type="range" min="1000" max="100000" step="1000" value="20000" />
+      </label>
+
+      <label class="field" id="depthField">
+        <span>递归深度（细分）<b id="depthVal">4</b></span>
+        <input id="depth" type="range" min="0" max="7" step="1" value="4" />
+      </label>
+
+      <label class="field" id="modeField">
+        <span>渲染模式</span>
+        <select id="mode">
+          <option value="points">点云 POINTS</option>
+          <option value="lines">线框 LINES</option>
+          <option value="triangles">实体 TRIANGLES</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>点大小 <b id="pointSizeVal">2</b></span>
+        <input id="pointSize" type="range" min="1" max="12" step="0.5" value="2" />
+      </label>
+
+      <label class="field">
+        <span>配色方案</span>
+        <select id="palette">
+          <option value="霓虹">霓虹</option>
+          <option value="日落">日落</option>
+          <option value="极光">极光</option>
+          <option value="霜蓝">霜蓝</option>
+          <option value="单色">单色</option>
+        </select>
+      </label>
+
+      <label class="field" id="nSidesField">
+        <span>多边形边数 n（E1）<b id="nSidesVal">3</b></span>
+        <input id="nSides" type="range" min="3" max="8" step="1" value="3" />
+      </label>
+
+      <div class="btns">
+        <button id="pauseBtn">⏸ 暂停生长</button>
+        <button id="resetBtn" class="ghost">重置视角</button>
+      </div>
+
+      <p id="stat" class="stat">—</p>
+      <p class="hint">
+        左键拖动平移 · 滚轮缩放 · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> 切换渲染模式 · <kbd>空格</kbd> 暂停/继续
+      </p>
+    </aside>
+
+    <main id="stage">
+      <canvas id="gl"></canvas>
+    </main>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
