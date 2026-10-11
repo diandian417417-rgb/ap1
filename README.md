@@ -126,8 +126,3 @@ subdivide(triangle, depth):
 
 - 教材：Angel & Shreiner, *Interactive Computer Graphics*, 8th ed.（Ch2–3）。
 - `js/gl-utils.js` 为自写的着色器编译封装，作用等价于教材 `Common/initShaders.js`。
-
----
-
-> **AI 使用披露**：本项目在 AI 助手（ima.copilot）辅助下完成代码框架搭建与调试，
-> 代码逻辑由本人理解并修改，特此说明。
